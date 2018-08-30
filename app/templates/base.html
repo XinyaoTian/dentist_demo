@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}} - Web Demo</title>
+    {% else %}
+    <title>Welcome to a little Web Demo</title>
+    {% endif %}
+</head>
+<body>
+    <div>Go To
+        <a href="{{url_for('index')}}">Home</a>
+        <a href="{{url_for('login')}}">Login</a>
+    </div>
+
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{message}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <!--在这个模板中，
+    我使用block控制语句来定义派生模板可以插入代码的位置。
+     block被赋予一个唯一的名称，
+     派生的模板可以在提供其内容时进行引用。-->
+    {% block content %}{% endblock %}
+</body>
+</html>
