@@ -40,3 +40,7 @@ def show_result():
 @application.route('/userPage')
 def userpage_show():
     return render_template('userPage.html')
+
+@application.route('/inputPage')
+def inputpage_show():
+    return render_template('inputPage.html')
