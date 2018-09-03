@@ -51,15 +51,41 @@ def inputpage_show():
 @application.route('/analysisPage')
 def analysispage_show():
     post = {'patientId': u'未知', 'description': u'未输入任何病人数据，无法分析!'}
-    return render_template('analysisPage.html', post = post)
+    # 临时代码----
+    post_data = {
+        'Y_probability_lr': 0,
+        'Y_probability_rfc': 0,
+        'Y_probability_gbtc': 0,
+        'Y_prediction_svc': 0,
+        'Y_prediction_gbtreg': 0,
+        'Y_prediction_gbtc': 0,
+        'isAvailable':u'无数据'
+    }
+    # 临时代码结束----
+    return render_template('analysisPage.html', post = post ,post_data = post_data)
 
 @application.route('/analysisPage', methods=['Get','POST'])
 def analysispage_parse():
     if request.form['patientId'] is not None:
         patientId = request.form['patientId']
         post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
+        # 临时代码----
+        post_data = {
+            'Y_probability_lr': 82,
+            'Y_probability_rfc': 79,
+            'Y_probability_gbtc': 94,
+            'Y_prediction_svc': 98,
+            'Y_prediction_gbtreg': 3.2,
+            'Y_prediction_gbtc': 1.0
+        }
+
+        if post_data['Y_prediction_gbtc'] >= 1.0:
+            post_data['isAvailable'] = u"治疗有效"
+        else:
+            post_data['isAvailable'] = u"治疗无效"
+        # 临时代码结束----
         logging.info(str(post['patientId']))
-        return render_template('analysisPage.html' , post = post)
+        return render_template('analysisPage.html' , post = post,post_data = post_data)
     else:
         post = {'patientId':u'未知' , 'description':u'未输入任何病人数据，无法分析!'}
         return render_template('analysisPage.html', post=post )

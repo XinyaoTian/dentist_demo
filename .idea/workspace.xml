@@ -4,9 +4,6 @@
     <list default="true" id="ad82fb7b-d726-43a0-94e9-38815018b0ae" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.py" afterPath="$PROJECT_DIR$/app/routes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/analysisPage.html" afterPath="$PROJECT_DIR$/app/templates/analysisPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/inputPage.html" afterPath="$PROJECT_DIR$/app/templates/inputPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/tutorialPage.html" afterPath="$PROJECT_DIR$/app/templates/tutorialPage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/userPage.html" afterPath="$PROJECT_DIR$/app/templates/userPage.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="analysisPage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="analysisPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/analysisPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+            <state relative-caret-position="702">
+              <caret line="155" column="83" lean-forward="true" selection-start-line="155" selection-start-column="83" selection-end-line="155" selection-end-column="83" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -87,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="55" column="36" lean-forward="true" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+            <state relative-caret-position="413">
+              <caret line="75" column="37" lean-forward="false" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
               <folding>
                 <element signature="e#25#52#0" expanded="true" />
               </folding>
@@ -157,8 +154,8 @@
         <option value="$PROJECT_DIR$/app/templates/userPage.html" />
         <option value="$PROJECT_DIR$/app/templates/tutorialPage.html" />
         <option value="$PROJECT_DIR$/app/templates/inputPage.html" />
-        <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/templates/analysisPage.html" />
+        <option value="$PROJECT_DIR$/app/routes.py" />
       </list>
     </option>
   </component>
@@ -750,22 +747,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/analysisPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="55" column="36" lean-forward="true" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="702">
+          <caret line="155" column="83" lean-forward="true" selection-start-line="155" selection-start-column="83" selection-end-line="155" selection-end-column="83" />
           <folding>
-            <element signature="e#25#52#0" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/analysisPage.html">
+    <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="94" column="30" lean-forward="true" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        <state relative-caret-position="413">
+          <caret line="75" column="37" lean-forward="false" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#25#52#0" expanded="true" />
           </folding>
         </state>
       </provider>

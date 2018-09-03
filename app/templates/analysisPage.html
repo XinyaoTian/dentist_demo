@@ -105,7 +105,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body easypiechart-panel">
                             <h4>GBT模型预测结果</h4>
-                            <div class="easypiechart" id="easypiechart-blue" data-percent="82" ><span class="percent">82%</span>
+                            <div class="easypiechart" id="easypiechart-blue" data-percent="{{post_data.Y_probability_gbtc}}" ><span class="percent">{{post_data.Y_probability_gbtc}}%</span>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body easypiechart-panel">
                             <h4>随机森林预测结果</h4>
-                            <div class="easypiechart" id="easypiechart-orange" data-percent="73" ><span class="percent">73%</span>
+                            <div class="easypiechart" id="easypiechart-orange" data-percent="{{post_data.Y_probability_rfc}}" ><span class="percent">{{post_data.Y_probability_rfc}}%</span>
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body easypiechart-panel">
                             <h4>逻辑回归预测结果</h4>
-                            <div class="easypiechart" id="easypiechart-teal" data-percent="84" ><span class="percent">84%</span>
+                            <div class="easypiechart" id="easypiechart-teal" data-percent="{{post_data.Y_probability_lr}}" ><span class="percent">{{post_data.Y_probability_lr}}%</span>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                     <div class="panel panel-default">
                         <div class="panel-body easypiechart-panel">
                             <h4>SVM预测结果</h4>
-                            <div class="easypiechart" id="easypiechart-red" data-percent="92" ><span class="percent">92%</span>
+                            <div class="easypiechart" id="easypiechart-red" data-percent="{{post_data.Y_prediction_svc}}" ><span class="percent">{{post_data.Y_prediction_svc}}%</span>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                                 <i class="fa fa-sitemap fa-5x"></i>
                             </div>
                             <div class="panel-right">
-							    <h3>治疗有效</h3>
+							    <h3>{{post_data.isAvailable}}</h3>
                                 <strong> 多模型综合分析结果 </strong>
                             </div>
                         </div>
@@ -158,7 +158,7 @@
                                 <i class="fa fa-table fa-5x"></i>
                             </div>
                             <div class="panel-right">
-							    <h3> 2.3 </h3>
+							    <h3> {{post_data.Y_prediction_gbtreg}} </h3>
                                 <strong> 回归模型预测Y值 </strong>
                             </div>
                         </div>
