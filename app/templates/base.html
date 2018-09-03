@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     {% if title %}
-    <title>{{title}} - Web Demo</title>
+    <title>{{title}} - Dentist Analysis Application</title>
     {% else %}
-    <title>Welcome to a little Web Demo</title>
+    <title>Dentist Analysis Application</title>
     {% endif %}
 </head>
 <body>
-    <div>Go To
-        <a href="{{url_for('index')}}">Home</a>
-        <a href="{{url_for('login')}}">Login</a>
+    <div>Fast Go To
+        <a href="/welcomePage">Front Page</a>
+        <a href="/input">Analysis Page</a>
+        <a href="/result">Result Page</a>
     </div>
 
     <hr>
