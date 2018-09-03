@@ -1,6 +1,9 @@
+# -*- encoding:utf-8 -*-
 from app import application
-from flask import render_template, flash, redirect ,url_for
+from flask import render_template, flash, redirect ,url_for ,request
 from app.forms import AnalysisForm
+import logging
+logging.basicConfig(level=logging.INFO)
 
 @application.route('/index')
 @application.route('/welcomePage')
@@ -47,11 +50,19 @@ def inputpage_show():
 
 @application.route('/analysisPage')
 def analysispage_show():
-    return render_template('analysisPage.html')
+    post = {'patientId': u'未知', 'description': u'未输入任何病人数据，无法分析!'}
+    return render_template('analysisPage.html', post = post)
 
-@application.route('/analysisPage', methods=['POST'])
+@application.route('/analysisPage', methods=['Get','POST'])
 def analysispage_parse():
-    return render_template('analysisPage.html')
+    if request.form['patientId'] is not None:
+        patientId = request.form['patientId']
+        post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
+        logging.info(str(post['patientId']))
+        return render_template('analysisPage.html' , post = post)
+    else:
+        post = {'patientId':u'未知' , 'description':u'未输入任何病人数据，无法分析!'}
+        return render_template('analysisPage.html', post=post )
 
 @application.route('/tutorialPage')
 def tutorialpage_show():
