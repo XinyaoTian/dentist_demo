@@ -9,6 +9,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField("Sign In")
 
 class AnalysisForm(FlaskForm):
+    patientId = StringField("patientId",validators=[DataRequired()])
     x1 = StringField("X1",validators=[DataRequired()])
     x2 = StringField("X2", validators=[DataRequired()])
     x3 = StringField("X3", validators=[DataRequired()])
@@ -20,4 +21,4 @@ class AnalysisForm(FlaskForm):
     x9 = StringField("X9", validators=[DataRequired()])
     x10 = StringField("X10", validators=[DataRequired()])
     x11 = StringField("X11", validators=[DataRequired()])
-    submit = SubmitField("Start Analysis")
+    submit = SubmitField("Analysis")

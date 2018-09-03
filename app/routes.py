@@ -2,7 +2,6 @@ from app import application
 from flask import render_template, flash, redirect ,url_for
 from app.forms import AnalysisForm
 
-@application.route('/')
 @application.route('/index')
 @application.route('/welcomePage')
 def index():
@@ -37,6 +36,7 @@ def show_result():
     }
     return render_template('result.html',title="Results", posts = posts)
 
+@application.route('/')
 @application.route('/userPage')
 def userpage_show():
     return render_template('userPage.html')
@@ -47,6 +47,10 @@ def inputpage_show():
 
 @application.route('/analysisPage')
 def analysispage_show():
+    return render_template('analysisPage.html')
+
+@application.route('/analysisPage', methods=['POST'])
+def analysispage_parse():
     return render_template('analysisPage.html')
 
 @application.route('/tutorialPage')
