@@ -44,3 +44,11 @@ def userpage_show():
 @application.route('/inputPage')
 def inputpage_show():
     return render_template('inputPage.html')
+
+@application.route('/analysisPage')
+def analysispage_show():
+    return render_template('analysisPage.html')
+
+@application.route('/tutorialPage')
+def tutorialpage_show():
+    return render_template('tutorialPage.html')
