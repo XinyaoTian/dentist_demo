@@ -37,6 +37,6 @@ def show_result():
     }
     return render_template('result.html',title="Results", posts = posts)
 
-@application.route('/empty')
-def show():
-    return render_template('empty.html', title="Index")
+@application.route('/userPage')
+def userpage_show():
+    return render_template('userPage.html')
