@@ -67,7 +67,29 @@ def analysispage_show():
 @application.route('/analysisPage', methods=['Get','POST'])
 def analysispage_parse():
     if request.form['patientId'] is not None:
-        patientId = request.form['patientId']
+        try:
+            patientId = request.form['patientId']
+
+            X1 =float(request.form['X1'])
+            X2 = float(request.form['X2'])
+            X3 = float(request.form['X3'])
+            X4 = float(request.form['X4'])
+            X5 = float(request.form['X5'])
+            X6 = float(request.form['X6'])
+            X7 = float(request.form['X7'])
+            X8 = float(request.form['X8'])
+            X9 = float(request.form['X9'])
+            X10 = float(request.form['X10'])
+            X11 = float(request.form['X11'])
+
+            param_dict = {
+                'X1':X1, 'X2':X2, 'X3':X3, 'X4':X4, 'X5':X5, 'X6':X6,
+                'X7':X7, 'X8':X8, 'X9':X9, 'X10':X10, 'X11':X11
+                          }
+            logging.info(str(param_dict))
+        except:
+            flash(u"输入信息存在不正确格式。请注意: 各项指标只能为数字; 各项指标均不能为空值。")
+            return render_template('inputPage.html')
         post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
         # 临时代码----
         post_data = {
@@ -84,7 +106,6 @@ def analysispage_parse():
         else:
             post_data['isAvailable'] = u"治疗无效"
         # 临时代码结束----
-        logging.info(str(post['patientId']))
         return render_template('analysisPage.html' , post = post,post_data = post_data)
     else:
         post = {'patientId':u'未知' , 'description':u'未输入任何病人数据，无法分析!'}

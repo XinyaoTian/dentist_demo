@@ -93,13 +93,22 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 请输入病人各项指标
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                <ul class=flashes>
+                                        {% for message in messages %}
+                                    <a><span style="color: red;">{{ message }}</span></a>
+                                        {% endfor %}
+                                </ul>
+                                    {% endif %}
+                                {% endwith %}
                             </div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <form action="/analysisPage" role="form" method="post">
                                             <div class="form-group">
-                                                <label>病人标识信息</label>
+                                                <label>病人标识信息(英文或数字)</label>
                                                 <input name="patientId" class="form-control" placeholder="请输入病人标识号">
                                             </div>
 
