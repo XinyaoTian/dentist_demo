@@ -6,6 +6,8 @@ from app.FunctionalModels.PredictionAnalysis import PredictionAnalysis
 import logging
 logging.basicConfig(level=logging.INFO)
 
+pa = PredictionAnalysis()
+
 @application.route('/index')
 @application.route('/welcomePage')
 def index():
@@ -95,7 +97,7 @@ def analysispage_parse():
         post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
 
         # 机器学习代码
-        pa = PredictionAnalysis()
+        # pa = PredictionAnalysis() # pa 已经在加载 routes.py 时初始化过了
         post_data = pa.analysisData_webOutput(param_dict)
         if post_data['Y_prediction_gbtc'] >= 1.0:
             post_data['isAvailable'] = u"治疗有效"
