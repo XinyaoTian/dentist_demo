@@ -118,7 +118,7 @@ def analysispage_parse():
         # else:
         #     post_data['isAvailable'] = u"治疗无效"
         # # 临时代码结束----
-        return render_template('analysisPage.html' , post = post,post_data = post_data)
+        return render_template('analysisPage.html' , post = post,post_data = post_data , param_dict = param_dict)
     else:
         pass
         # 因为即使病人的id输入的是空值，request.form['patientId'] 也不会为 None 因此分支几乎无效
