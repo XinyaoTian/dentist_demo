@@ -100,6 +100,7 @@ def analysispage_parse():
             post_data['isAvailable'] = u"治疗有效"
         else:
             post_data['isAvailable'] = u"治疗无效"
+        # 机器学习代码结束
 
         # # 临时代码----
         # post_data = {
