@@ -65,8 +65,12 @@ def analysispage_show():
         'Y_prediction_gbtc': 0,
         'isAvailable':u'无数据'
     }
+    param_dict = {
+        'X1': 0, 'X2': 0, 'X3': 0, 'X4': 0, 'X5': 0, 'X6': 0,
+        'X7': 0, 'X8': 0, 'X9': 0, 'X10': 0, 'X11': 0
+    }
     # 临时代码结束----
-    return render_template('analysisPage.html', post = post ,post_data = post_data)
+    return render_template('analysisPage.html', post = post ,post_data = post_data , param_dict=param_dict)
 
 @application.route('/analysisPage', methods=['Get','POST'])
 def analysispage_parse():
