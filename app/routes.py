@@ -95,28 +95,28 @@ def analysispage_parse():
         post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
 
         # 机器学习代码
-        # pa = PredictionAnalysis()
-        # post_data = pa.analysisData_webOutput(param_dict)
-        # if post_data['Y_prediction_gbtc'] >= 1.0:
-        #     post_data['isAvailable'] = u"治疗有效"
-        # else:
-        #     post_data['isAvailable'] = u"治疗无效"
-        # 机器学习代码结束
-
-        # # 临时代码----
-        post_data = {
-            'Y_probability_lr': 82,
-            'Y_probability_rfc': 79,
-            'Y_probability_gbtc': 94,
-            'Y_prediction_svc': 98,
-            'Y_prediction_gbtreg': 3.2,
-            'Y_prediction_gbtc': 1.0
-        }
-
+        pa = PredictionAnalysis()
+        post_data = pa.analysisData_webOutput(param_dict)
         if post_data['Y_prediction_gbtc'] >= 1.0:
             post_data['isAvailable'] = u"治疗有效"
         else:
             post_data['isAvailable'] = u"治疗无效"
+        # 机器学习代码结束
+
+        # # 临时代码----
+        # post_data = {
+        #     'Y_probability_lr': 82,
+        #     'Y_probability_rfc': 79,
+        #     'Y_probability_gbtc': 94,
+        #     'Y_probability_svc': 98,
+        #     'Y_prediction_gbtreg': 3.2,
+        #     'Y_prediction_gbtc': 1.0
+        # }
+        #
+        # if post_data['Y_prediction_gbtc'] >= 1.0:
+        #     post_data['isAvailable'] = u"治疗有效"
+        # else:
+        #     post_data['isAvailable'] = u"治疗无效"
         # # 临时代码结束----
         return render_template('analysisPage.html' , post = post,post_data = post_data)
     else:
