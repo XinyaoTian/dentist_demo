@@ -2,6 +2,7 @@
 from app import application
 from flask import render_template, flash, redirect ,url_for ,request
 from app.forms import AnalysisForm
+from app.FunctionalModels.PredictionAnalysis import PredictionAnalysis
 import logging
 logging.basicConfig(level=logging.INFO)
 
@@ -91,25 +92,36 @@ def analysispage_parse():
             flash(u"输入信息存在不正确格式。请注意: 各项指标只能为数字; 各项指标均不能为空值。")
             return render_template('inputPage.html')
         post = {'patientId':patientId ,'description':u'根据病人的各项指标，机器学习模型预测诊断如下:'}
-        # 临时代码----
-        post_data = {
-            'Y_probability_lr': 82,
-            'Y_probability_rfc': 79,
-            'Y_probability_gbtc': 94,
-            'Y_prediction_svc': 98,
-            'Y_prediction_gbtreg': 3.2,
-            'Y_prediction_gbtc': 1.0
-        }
 
+        # 机器学习代码
+        pa = PredictionAnalysis()
+        post_data = pa.analysisData_webOutput(param_dict)
         if post_data['Y_prediction_gbtc'] >= 1.0:
             post_data['isAvailable'] = u"治疗有效"
         else:
             post_data['isAvailable'] = u"治疗无效"
-        # 临时代码结束----
+
+        # # 临时代码----
+        # post_data = {
+        #     'Y_probability_lr': 82,
+        #     'Y_probability_rfc': 79,
+        #     'Y_probability_gbtc': 94,
+        #     'Y_prediction_svc': 98,
+        #     'Y_prediction_gbtreg': 3.2,
+        #     'Y_prediction_gbtc': 1.0
+        # }
+        #
+        # if post_data['Y_prediction_gbtc'] >= 1.0:
+        #     post_data['isAvailable'] = u"治疗有效"
+        # else:
+        #     post_data['isAvailable'] = u"治疗无效"
+        # # 临时代码结束----
         return render_template('analysisPage.html' , post = post,post_data = post_data)
     else:
-        post = {'patientId':u'未知' , 'description':u'未输入任何病人数据，无法分析!'}
-        return render_template('analysisPage.html', post=post )
+        pass
+        # 因为即使病人的id输入的是空值，request.form['patientId'] 也不会为 None 因此分支几乎无效
+        # post = {'patientId':u'未知' , 'description':u'未输入任何病人数据，无法分析!'}
+        # return render_template('analysisPage.html', post=post )
 
 @application.route('/tutorialPage')
 def tutorialpage_show():
